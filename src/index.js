@@ -14,11 +14,6 @@ app.get('/fire', (req, res) => {
                 message: 'Ok'
             })
         })
-        .catch((err) => {
-            res.send({
-                message: err
-            })
-        })
 })
 
 app.listen(app.get("port"), () => {
