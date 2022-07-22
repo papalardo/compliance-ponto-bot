@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer";
+import browser from "./browser.js";
 
 const LOGIN_URL = 'https://portal.compliancehcm.com.br/apex/f?p=187';
 
@@ -7,14 +7,9 @@ const batePonto = async (userEmail, userPassword) => {
         throw "Credenciais inválidas";
     }
 
-    const browser = await puppeteer.launch({
-        headless: false,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-        ],
-    });
-    const page = await browser.newPage();
+    const browserInstance = await browser.instance();
+
+    const page = await browserInstance.newPage();
     await page.goto(LOGIN_URL);
 
     // Login
