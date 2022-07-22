@@ -15,7 +15,7 @@ app.get('/fire', (req, res) => {
             })
         })
         .catch((error) => {
-            res.sendStatus(500)
+            res.status(500)
                 .send({
                     error: error.toString(),
                 })
