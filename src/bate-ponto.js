@@ -53,7 +53,7 @@ const batePonto = async (userEmail, userPassword) => {
         path: 'result.png'
     });
 
-    await browser.close();
+    await browserInstance.close();
 
     return true;
 }

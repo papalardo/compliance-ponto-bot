@@ -14,6 +14,12 @@ app.get('/fire', (req, res) => {
                 message: 'Ok'
             })
         })
+        .catch((error) => {
+            res.sendStatus(500)
+                .send({
+                    error: error.toString(),
+                })
+        })
 })
 
 app.listen(app.get("port"), () => {
