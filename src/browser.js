@@ -7,7 +7,6 @@ const browser = () => {
             return browserInstance;
         }
         browserInstance = await puppeteer.launch({
-            headless: false,
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
