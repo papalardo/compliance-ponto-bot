@@ -16,7 +16,7 @@ app.get('/fire', (req, res) => {
         })
         .catch((err) => {
             res.send({
-                message: err.toString()
+                message: err
             })
         })
 })
