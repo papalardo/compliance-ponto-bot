@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer/lib/types.js";
+import puppeteer from "puppeteer";
 
 const browser = () => {
     let browserInstance;
