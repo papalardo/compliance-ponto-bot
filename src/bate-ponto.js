@@ -8,6 +8,7 @@ const batePonto = async (userEmail, userPassword) => {
     }
 
     const browser = await puppeteer.launch({
+        headless: false,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
@@ -24,10 +25,11 @@ const batePonto = async (userEmail, userPassword) => {
     try {
         // Botão para abrir modal
         const baterPontoBtn = await page.waitForSelector('#B491409282691032647', {
-            timeout: 3000,
+            timeout: 5000,
         });
         await baterPontoBtn.click();
     } catch (e) {
+        throw e;
         throw "Erro ao realizar login";
     }
 
